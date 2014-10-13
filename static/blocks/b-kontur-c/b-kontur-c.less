@@ -1,0 +1,49 @@
+.b-kontur-c {
+
+  width: 480px ;
+
+  &__head {
+    margin-bottom: 20px;
+  }
+
+  &__el {
+    margin-bottom: 10px;
+    margin-left: 20px;
+    .clearFix();
+  }
+
+  &__el:hover {
+    background: #b3e0f4;
+  }
+
+  &__val {
+    width: 116px;
+    float: left;
+    text-align: right;
+    margin-right: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__nu-inp {
+    text-align: right;
+  }
+
+  &__save {
+    margin-right: 10px;
+  }
+
+  &__remove {
+    visibility: hidden;
+    margin-right: 10px;
+  }
+
+  &__remove,
+  &__remove:visited {
+
+  }
+
+  &__el:hover &__remove {
+    visibility: visible;
+  }
+}
