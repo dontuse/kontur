@@ -32,7 +32,7 @@ buttonText: Нажми меня
     </div>
     <div data-bind="foreach:data.elements">
         <div class="b-kontur-c__el">
-            <span data-bind="text:val , click: $root.startEdit , visible: !edit()" class="b-kontur-c__val"></span>
+            <span data-bind="currency:val , click: $root.startEdit , visible: !edit()" class="b-kontur-c__val"></span>
             <input data-bind="value:val, visible: edit() " class="b-input b-kontur-c__nu-inp">
             <a data-bind="click:$root.saveItem , visible: edit()" class="b-button b-kontur-c__save" href="">сохранить</a>
             <a data-bind="click:$root.removeItem" class="b-kontur-c__remove" href="">удалить</a>

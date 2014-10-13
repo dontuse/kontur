@@ -5,6 +5,7 @@ function KonturComponent(data) {
     self.data = {
         elements: []
     };
+
     self.data.elements = ko.observableArray([
         {
             val: ko.observable(12313),
@@ -12,12 +13,17 @@ function KonturComponent(data) {
         }
     ]);
 
+    self.total = ko.computed(function () {
+        var summ = 0;
+        var val = 0;
+        for (var i = 0; self.data.elements().length > i; i++) {
 
-    self.render = function () {
-    };
+            summ += +self.data.elements()[i].val();
+        }
 
-    self.makeSumm = function () {
-    };
+        return summ;
+    });
+
 
     self.addItem = function () {
         console.log(this);
@@ -45,14 +51,6 @@ function KonturComponent(data) {
     };
 
 
-    self.total = ko.computed(function () {
-        var summ = 0;
-        var val = 0;
-        for (var i = 0; self.data.elements().length > i; i++) {
 
-            summ += +self.data.elements()[i].val();
-        }
 
-        return summ;
-    });
 }
