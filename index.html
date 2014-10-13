@@ -24,55 +24,25 @@
 <div class="b-wrap b-content">
     
 
-<!--<h1 class="b-title">Home</h1>
-
-<ol class="b-breadcrumb">
-    <li class="b-breadcrumb__item">
-        <a href="#">Home</a>
-    </li>
-    <li class="b-breadcrumb__item">
-        <a href="#">Library</a>
-    </li>
-    <li class="b-breadcrumb__item">Data</li>
-</ol>
-
-<ul class="pagination">
-    <li><a href="#">&laquo;</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">&raquo;</a></li>
-</ul>
-<button type="button" class="b-button">Нажми меня</button>
-
-
-
-<div class="b-control">
-    <div class="b-contol__container-1">
-        <label class="b-contol__label">ФИО: </label>
-    </div>
-    <div class="b-contol____container-2">
-        <input  class="b-contol__input b-input" placeholder="Необходимо заполнить это поле.">
-        <span class="b-contol__error">Необходимо заполнить это поле.</span>
-    </div>
-</div>-->
-
 <div class="b-kontur-c js-konur-calc">
     <div class="b-kontur-c__head">
-        <a data-bind='click: addItem' class="b-button" href='#'>Добавить Строчку</a>
+        <button data-bind='click: addItem' class="b-button" type="button">Добавить cтрочку</button>
     </div>
+    <div class="b-kontur-c__cy">Сумма, р.:</div>
     <div data-bind="foreach:data.elements">
         <div class="b-kontur-c__el">
             <span data-bind="currency:val , click: $root.startEdit , visible: !edit()" class="b-kontur-c__val"></span>
             <input data-bind="value:val, visible: edit() " class="b-input b-kontur-c__nu-inp">
-            <a data-bind="click:$root.saveItem , visible: edit()" class="b-button b-kontur-c__save" href="">сохранить</a>
+            <button data-bind="click:$root.saveItem , visible: edit()" class="b-button b-kontur-c__save" type="button">
+                сохранить
+            </button>
             <a data-bind="click:$root.removeItem" class="b-kontur-c__remove" href="">удалить</a>
         </div>
     </div>
     <div class="b-kontur-c__total b-kontur-c__total_stycky">Итого: <b data-bind="text:total"></b></div>
 </div>
+
+
 
 
 
@@ -90,11 +60,7 @@
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="static/js/bower_components/knockoutjs/dist/knockout.debug.js"></script>
 <script src="static/js/sticky.js"></script>
-
-
-
 <script src="static/js/addon.js"></script>
-
 <script src="static/js/KonturComponent.js"></script>
 
 <script>

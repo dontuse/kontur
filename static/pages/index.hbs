@@ -1,45 +1,24 @@
----
-title: Home
 
-people:
-- Jon Schlinkert
-- Brian Woodward
-
-buttonText: Нажми меня
-
----
-
-<!--<h1 class="b-title">{{title}}</h1>
-
-{{>b-breadcrumb}}
-
-{{>b-pagination}}
-{{>b-button buttonText}}
-
-<div class="b-control">
-    <div class="b-contol__container-1">
-        <label class="b-contol__label">ФИО: </label>
-    </div>
-    <div class="b-contol____container-2">
-        <input  class="b-contol__input b-input" placeholder="Необходимо заполнить это поле.">
-        <span class="b-contol__error">Необходимо заполнить это поле.</span>
-    </div>
-</div>-->
 
 <div class="b-kontur-c js-konur-calc">
     <div class="b-kontur-c__head">
-        <a data-bind='click: addItem' class="b-button" href='#'>Добавить Строчку</a>
+        <button data-bind='click: addItem' class="b-button" type="button">Добавить cтрочку</button>
     </div>
+    <div class="b-kontur-c__cy">Сумма, р.:</div>
     <div data-bind="foreach:data.elements">
         <div class="b-kontur-c__el">
             <span data-bind="currency:val , click: $root.startEdit , visible: !edit()" class="b-kontur-c__val"></span>
             <input data-bind="value:val, visible: edit() " class="b-input b-kontur-c__nu-inp">
-            <a data-bind="click:$root.saveItem , visible: edit()" class="b-button b-kontur-c__save" href="">сохранить</a>
+            <button data-bind="click:$root.saveItem , visible: edit()" class="b-button b-kontur-c__save" type="button">
+                сохранить
+            </button>
             <a data-bind="click:$root.removeItem" class="b-kontur-c__remove" href="">удалить</a>
         </div>
     </div>
     <div class="b-kontur-c__total b-kontur-c__total_stycky">Итого: <b data-bind="text:total"></b></div>
 </div>
+
+
 
 
 

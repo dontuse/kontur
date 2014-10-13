@@ -1,54 +1,42 @@
-$(function(){
-    function elementInViewport(el) {
-        var top = el.offsetTop;
-        var left = el.offsetLeft;
-        var width = el.offsetWidth;
-        var height = el.offsetHeight;
+$(function () {
 
-        while(el.offsetParent) {
-            el = el.offsetParent;
-            top += el.offsetTop;
-            left += el.offsetLeft;
-        }
+    var $elem = $('.b-kontur-c__total');
 
-        return (
-            top >= window.pageYOffset &&
-            left >= window.pageXOffset &&
-            (top + height) <= (window.pageYOffset + window.innerHeight) &&
-            (left + width) <= (window.pageXOffset + window.innerWidth)
-            );
-    }
-
-
-
-    $('.b-button').on('click' , function() {
-        console.log(elementInViewport($('b-kontur-c__total')));
-
-
-            var viewportWidth = jQuery(window).width(),
-                viewportHeight = jQuery(window).height(),
-                documentScrollTop = jQuery(document).scrollTop(),
-                documentScrollLeft = jQuery(document).scrollLeft(),
-
-                $myElement = jQuery('.b-kontur-c__total'),
-
-                elementOffset = $myElement.offset(),
-                elementHeight = $myElement.height(),
-                elementWidth = $myElement.width(),
-
-                minTop = documentScrollTop,
-                maxTop = documentScrollTop + viewportHeight,
-                minLeft = documentScrollLeft,
-                maxLeft = documentScrollLeft + viewportWidth;
-
-            if (
-                (elementOffset.top > minTop && elementOffset.top + elementHeight < maxTop) &&
-                (elementOffset.left > minLeft && elementOffset.left + elementWidth < maxLeft)
-                ) {
-                console.log('entire element is visible');
-            } else {
-                console.log('entire element is not visible');
-            }
-
+    $('.b-button').on('click', function () {
+        checkInViewPort($elem) ?
+            $elem.addClass('.b-kontur-c__total_stycky') :
+            $elem.addClass('.b-kontur-c__total_stycky');
     });
+
+    $(window).scroll(function(){
+        checkInViewPort($elem) ?
+            $elem.addClass('.b-kontur-c__total_stycky') :
+            $elem.addClass('.b-kontur-c__total_stycky');
+    });
+
+
+    function checkInViewPort($elem) {
+        var viewportWidth = jQuery(window).width(),
+            viewportHeight = jQuery(window).height(),
+            documentScrollTop = jQuery(document).scrollTop(),
+            documentScrollLeft = jQuery(document).scrollLeft(),
+
+            $myElement = $elem,
+
+            elementOffset = $myElement.offset(),
+            elementHeight = $myElement.height(),
+            elementWidth = $myElement.width(),
+
+            minTop = documentScrollTop,
+            maxTop = documentScrollTop + viewportHeight,
+            minLeft = documentScrollLeft,
+            maxLeft = documentScrollLeft + viewportWidth;
+
+
+        return ((elementOffset.top > minTop && elementOffset.top + elementHeight < maxTop) && (elementOffset.left > minLeft && elementOffset.left + elementWidth < maxLeft))
+
+    }
 });
+
+
+

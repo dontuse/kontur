@@ -27,7 +27,7 @@ function KonturComponent(data) {
 
     self.addItem = function () {
         console.log(this);
-        this.data.elements.unshift({val: ko.observable(), edit: ko.observable(true)});
+        this.data.elements.unshift({val: ko.observable(0), edit: ko.observable(true)});
     };
 
     self.removeItem = function (elem) {
@@ -49,8 +49,6 @@ function KonturComponent(data) {
         console.log("edit start");
         elem.edit(true);
     };
-
-
 
 
 }
