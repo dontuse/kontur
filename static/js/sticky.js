@@ -4,14 +4,14 @@ $(function () {
 
     $('.b-button').on('click', function () {
         checkInViewPort($elem) ?
-            $elem.addClass('.b-kontur-c__total_stycky') :
-            $elem.addClass('.b-kontur-c__total_stycky');
+            $elem.addClass('b-kontur-c__total_stycky') :
+            $elem.removeClass('b-kontur-c__total_stycky');
     });
 
     $(window).scroll(function(){
         checkInViewPort($elem) ?
-            $elem.addClass('.b-kontur-c__total_stycky') :
-            $elem.addClass('.b-kontur-c__total_stycky');
+            $elem.addClass('b-kontur-c__total_stycky') :
+            $elem.removeClass('b-kontur-c__total_stycky');
     });
 
 

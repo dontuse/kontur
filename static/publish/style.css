@@ -605,7 +605,12 @@ textarea {
 .b-kontur-c__el:after {
   clear: both;
 }
-.b-kontur-c__el:hover {
+.b-kontur-c__el-row {
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.b-kontur-c__el-row:hover {
   background: #b3e0f4;
 }
 .b-kontur-c__val {
@@ -626,8 +631,8 @@ textarea {
   padding: 0 8px;
 }
 .b-kontur-c__save {
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 20px;
+  margin-left: 21px;
 }
 .b-kontur-c__remove {
   visibility: hidden;
