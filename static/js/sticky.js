@@ -45,9 +45,9 @@ $(function(){
                 (elementOffset.top > minTop && elementOffset.top + elementHeight < maxTop) &&
                 (elementOffset.left > minLeft && elementOffset.left + elementWidth < maxLeft)
                 ) {
-                alert('entire element is visible');
+                console.log('entire element is visible');
             } else {
-                alert('entire element is not visible');
+                console.log('entire element is not visible');
             }
 
     });
