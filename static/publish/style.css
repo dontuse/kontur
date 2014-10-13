@@ -608,6 +608,7 @@ textarea {
   margin-right: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .b-kontur-c__nu-inp {
   text-align: right;
