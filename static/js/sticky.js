@@ -1,41 +1,39 @@
 $(function () {
 
     var $elem = $('.b-kontur-c__total');
+    var $sticky = $('.b-kontur-c__sticky');
+    var stClass = 'b-kontur-c__sticky_on';
 
-    $('.b-button').on('click', function () {
-        console.log(checkInViewPort($elem));
+    $(document).on('click', '.b-button , .b-kontur-c__remove' , function () {
+        handler();
+    });
+
+    $(window).scroll(function () {
+        handler();
+    });
+
+
+
+
+    function handler() {
         checkInViewPort($elem) ?
-            $elem.addClass('b-kontur-c__total_stycky') :
-            $elem.removeClass('b-kontur-c__total_stycky');
+            $sticky.addClass(stClass) :
+            $sticky.removeClass(stClass);
 
         $('.b-input:eq(0)').focus();
-    });
-
-    $(window).scroll(function(){
-        checkInViewPort($elem) ?
-            $elem.addClass('b-kontur-c__total_stycky') :
-            $elem.removeClass('b-kontur-c__total_stycky');
-    });
-
-    $(window).scroll(function() {
-        if($(window).scrollTop() + $(window).height() == $(document).height()) {
-            $elem.removeClass('b-kontur-c__total_stycky');
-        }
-    });
+    }
 
 
     function checkInViewPort($elem) {
-        var viewportWidth = jQuery(window).width(),
-            viewportHeight = jQuery(window).height(),
-            documentScrollTop = jQuery(document).scrollTop(),
-            documentScrollLeft = jQuery(document).scrollLeft(),
 
+        var viewportWidth = $(window).width(),
+            viewportHeight = $(window).height(),
+            documentScrollTop = $(document).scrollTop(),
+            documentScrollLeft = $(document).scrollLeft(),
             $myElement = $elem,
-
             elementOffset = $myElement.offset(),
             elementHeight = $myElement.height(),
             elementWidth = $myElement.width(),
-
             minTop = documentScrollTop,
             maxTop = documentScrollTop + viewportHeight,
             minLeft = documentScrollLeft,

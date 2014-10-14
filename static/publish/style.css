@@ -647,7 +647,7 @@ textarea {
 .b-kontur-c__el:hover .b-kontur-c__remove {
   visibility: visible;
 }
-.b-kontur-c__total_stycky {
+.b-kontur-c__sticky_on {
   position: fixed;
   bottom: 0;
   left: 200px;

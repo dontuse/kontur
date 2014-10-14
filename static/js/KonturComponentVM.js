@@ -1,4 +1,4 @@
-function KonturComponent(data) {
+function KonturComponentVM(data) {
     "use strict";
     var self = this;
 
@@ -35,7 +35,8 @@ function KonturComponent(data) {
     };
 
 
-    self.saveItem = function (elem) {
+    self.saveItem = function (elem ,event) {
+        //console.log($(event.target));
         elem.edit(false);
         elem.val(+elem.val());
         if(!$.isNumeric(elem.val()) || isNaN(elem.val()) ) {
@@ -47,6 +48,11 @@ function KonturComponent(data) {
         //console.log("edit start");
         elem.edit(true);
     };
+
+
+    self.data.elements.subscribe(function(){
+        //console.log('do do do');
+    });
 
 
 }
