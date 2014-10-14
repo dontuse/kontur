@@ -3,6 +3,7 @@ $(function () {
     var $elem = $('.b-kontur-c__total');
 
     $('.b-button').on('click', function () {
+        console.log(checkInViewPort($elem));
         checkInViewPort($elem) ?
             $elem.addClass('b-kontur-c__total_stycky') :
             $elem.removeClass('b-kontur-c__total_stycky');
@@ -33,7 +34,7 @@ $(function () {
             maxLeft = documentScrollLeft + viewportWidth;
 
 
-        return ((elementOffset.top > minTop && elementOffset.top + elementHeight < maxTop) && (elementOffset.left > minLeft && elementOffset.left + elementWidth < maxLeft))
+        return (!(elementOffset.top > minTop && elementOffset.top + elementHeight < maxTop) && (elementOffset.left > minLeft && elementOffset.left + elementWidth < maxLeft))
 
     }
 });

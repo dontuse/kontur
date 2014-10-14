@@ -17,8 +17,9 @@ function KonturComponent(data) {
         var summ = 0;
         var val = 0;
         for (var i = 0; self.data.elements().length > i; i++) {
-
-            summ += +self.data.elements()[i].val();
+            val = +self.data.elements()[i].val();
+            val = $.isNumeric(val) ? val : 0;
+            summ += val;
         }
 
         return summ;
@@ -26,8 +27,7 @@ function KonturComponent(data) {
 
 
     self.addItem = function () {
-        console.log(this);
-        this.data.elements.unshift({val: ko.observable(0), edit: ko.observable(true)});
+        this.data.elements.unshift({val: ko.observable(), edit: ko.observable(true)});
     };
 
     self.removeItem = function (elem) {
@@ -39,14 +39,14 @@ function KonturComponent(data) {
     self.saveItem = function (elem) {
         elem.edit(false);
         elem.val(+elem.val());
-        console.log(elem.val().constructor.name);
+        //console.log(elem.val().constructor.name);
         if(!(elem.val().constructor.name === 'Number') || isNaN(elem.val()) ) {
             elem.val(0);
         }
     };
 
     self.startEdit = function (elem) {
-        console.log("edit start");
+        //console.log("edit start");
         elem.edit(true);
     };
 
