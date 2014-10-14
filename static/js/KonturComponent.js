@@ -39,8 +39,7 @@ function KonturComponent(data) {
     self.saveItem = function (elem) {
         elem.edit(false);
         elem.val(+elem.val());
-        //console.log(elem.val().constructor.name);
-        if(!(elem.val().constructor.name === 'Number') || isNaN(elem.val()) ) {
+        if(!$.isNumeric(elem.val()) || isNaN(elem.val()) ) {
             elem.val(0);
         }
     };

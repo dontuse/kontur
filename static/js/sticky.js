@@ -15,6 +15,12 @@ $(function () {
             $elem.removeClass('b-kontur-c__total_stycky');
     });
 
+    $(window).scroll(function() {
+        if($(window).scrollTop() + $(window).height() == $(document).height()) {
+            $elem.removeClass('b-kontur-c__total_stycky');
+        }
+    });
+
 
     function checkInViewPort($elem) {
         var viewportWidth = jQuery(window).width(),
