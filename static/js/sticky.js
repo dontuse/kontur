@@ -7,6 +7,8 @@ $(function () {
         checkInViewPort($elem) ?
             $elem.addClass('b-kontur-c__total_stycky') :
             $elem.removeClass('b-kontur-c__total_stycky');
+
+        $('.b-input:eq(0)').focus();
     });
 
     $(window).scroll(function(){

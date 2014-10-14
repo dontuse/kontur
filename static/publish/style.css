@@ -614,7 +614,8 @@ textarea {
   background: #b3e0f4;
 }
 .b-kontur-c__val {
-  width: 70px;
+  min-width: 70px;
+  max-width: 400px;
   float: left;
   text-align: right;
   margin-right: 10px;
@@ -637,6 +638,11 @@ textarea {
 .b-kontur-c__remove {
   visibility: hidden;
   margin-right: 10px;
+}
+.b-kontur-c__remove,
+.b-kontur-c__remove:visited {
+  text-decoration: none;
+  border-bottom: 1px  dashed;
 }
 .b-kontur-c__el:hover .b-kontur-c__remove {
   visibility: visible;

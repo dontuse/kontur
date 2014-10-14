@@ -27,11 +27,10 @@ function KonturComponent(data) {
 
 
     self.addItem = function () {
-        this.data.elements.unshift({val: ko.observable(), edit: ko.observable(true)});
+        self.data.elements.unshift({val: ko.observable(), edit: ko.observable(true)});
     };
 
     self.removeItem = function (elem) {
-        var that = this;
         self.data.elements.remove(elem);
     };
 
