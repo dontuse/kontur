@@ -1,5 +1,5 @@
 function KonturComponent(data) {
-
+    "use strict";
     var self = this;
 
     self.data = {

@@ -22,9 +22,7 @@
 </header>
 
 <div class="b-wrap b-content">
-    
-
-<div class="b-kontur-c js-konur-calc">
+    <div class="b-kontur-c js-konur-calc">
     <div class="b-kontur-c__head">
         <button data-bind='click: addItem' class="b-button" type="button">Добавить cтрочку</button>
     </div>
@@ -33,7 +31,7 @@
         <div class="b-kontur-c__el">
            <div class="b-kontur-c__el-row">
                <span data-bind="currency:val , click: $root.startEdit , visible: !edit()" class="b-kontur-c__val"></span>
-               <input data-bind="value:val, visible: edit() " class="b-input b-kontur-c__nu-inp">
+               <input data-bind="value:val, enterKey:$root.saveItem, visible: edit() " class="b-input b-kontur-c__nu-inp">
                <button data-bind="click:$root.saveItem , visible: edit()" class="b-button b-kontur-c__save" type="button">
                    сохранить
                </button>
