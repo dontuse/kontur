@@ -384,6 +384,7 @@ html {
 body {
   font-size: 15px;
   line-height: 1.4666666666666666;
+  font-family: Arial, Helvetica, Sans-serif;
   color: #414141;
   position: relative;
   min-height: 100%;
@@ -518,6 +519,12 @@ textarea {
   font-size: 22px;
   line-height: 2em;
 }
+.b-title {
+  font-size: 21px;
+  line-height: 1;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 .b-page {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%);
   height: 100%;
@@ -579,21 +586,34 @@ textarea {
   padding-left: 206px;
 }
 .b-kontur-c {
-  width: 380px;
+  width: 280px;
   font-size: 13px;
   font-family: Arial;
 }
 .b-kontur-c__head {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  *zoom: 1;
+}
+.b-kontur-c__head:before,
+.b-kontur-c__head:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.b-kontur-c__head:after {
+  clear: both;
+}
+.b-kontur-c__add {
+  float: right;
 }
 .b-kontur-c__cy {
   font-weight: bold;
   margin-bottom: 10px;
-  margin-left: 34px;
+  text-align: right;
 }
 .b-kontur-c__el {
-  margin-bottom: 10px;
-  margin-left: 20px;
+  margin-bottom: 2px;
+  margin-left: 35px;
   *zoom: 1;
 }
 .b-kontur-c__el:before,
@@ -606,19 +626,23 @@ textarea {
   clear: both;
 }
 .b-kontur-c__el-row {
-  float: left;
+  float: right;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-right: -70px;
 }
 .b-kontur-c__el-row:hover {
   background: #b3e0f4;
+}
+.b-kontur-c__el-row_s_save {
+  margin-right: -106px;
 }
 .b-kontur-c__val {
   min-width: 70px;
   max-width: 400px;
   float: left;
   text-align: right;
-  margin-right: 10px;
+  margin-right: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -630,14 +654,10 @@ textarea {
   position: relative;
   right: -8px;
   padding: 0 8px;
-}
-.b-kontur-c__save {
-  margin-right: 20px;
-  margin-left: 21px;
+  margin-right: 16px;
 }
 .b-kontur-c__remove {
   visibility: hidden;
-  margin-right: 10px;
 }
 .b-kontur-c__remove,
 .b-kontur-c__remove:visited {
@@ -653,4 +673,8 @@ textarea {
   left: 200px;
   border: 1px solid #333333;
   background: #ffffff;
+}
+.b-kontur-c__total {
+  margin-top: 16px;
+  float: right;
 }

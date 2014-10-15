@@ -23,11 +23,15 @@
 
 <div class="b-wrap b-content">
     <div class="clearFix">
-    <div style="float: left;">
-        <div data-bind='component: "konturCalculator"'></div>
+    <div style="float: left; width: 50%">
+        <h2 class="b-title">1 инстанс</h2>
+
+        <div data-bind='component: {name:"konturCalculator" , params: calc1}'></div>
     </div>
-    <div style="float: left;">
-        <div data-bind='component: "konturCalculator"'></div>
+    <div style="float: left; width: 50%">
+        <h2 class="b-title">2 инстанс</h2>
+
+        <div data-bind='component: {name:"konturCalculator" , params: calc2}'></div>
     </div>
 </div>
 
@@ -45,57 +49,78 @@
     dsadsad
 </footer>
 
+
 <template id = "KonturComponent">
     <div class="b-kontur-c js-konur-calc">
         <div class="b-kontur-c__head">
-            <button data-bind='click: addItem' class="b-button" type="button">Добавить cтрочку</button>
+            <button data-bind='click: addItem' class="b-button b-kontur-c__add" type="button">Добавить cтрочку</button>
         </div>
         <div class="b-kontur-c__cy">Сумма, р.:</div>
         <div data-bind="foreach:data.elements">
             <div class="b-kontur-c__el">
-                <div class="b-kontur-c__el-row">
+                <div data-bind="css: { 'b-kontur-c__el-row_s_save': edit() }" class="b-kontur-c__el-row" >
                     <span data-bind="currency:val , click: $parents[0].startEdit , visible: !edit()" class="b-kontur-c__val"></span>
                     <input data-bind="value:val, enterKey:$parents[0].saveItem, visible: edit() " class="b-input b-kontur-c__nu-inp">
                     <button data-bind="click:$parents[0].saveItem , visible: edit()" class="b-button b-kontur-c__save" type="button">
                         сохранить
                     </button>
-                    <a data-bind="click:$parents[0].removeItem" class="b-kontur-c__remove" href="">удалить</a>
+                    <a data-bind="click:$parents[0].removeItem , visible: !edit()" class="b-kontur-c__remove" href="">Удалить</a>
                 </div>
             </div>
         </div>
         <div class="b-kontur-c__total">
-            <span class="b-kontur-c__sticky ">Итого: <b data-bind="text:total"></b></span>
+            <span class="b-kontur-c__sticky ">Итого: <b data-bind="currency:total"></b></span>
         </div>
     </div>
 </template>
 
 
-
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="static/js/bower_components/knockoutjs/dist/knockout.debug.js"></script>
-
+<!--<script src="static/js/sticky.js"></script>-->
 <script src="static/js/ko.bindings.extend.js"></script>
 <script src="static/js/KonturComponentVM.js"></script>
 
-
 <script>
-    ko.components.register('konturCalculator', {
-        viewModel: KonturComponentVM,
-        template: { element: 'KonturComponent'}
-    });
 
-
-</script>
-
-<script>
+    // app vm
     vm = function() {
-        this.val = 123;
-    }
+        var self = this;
+
+        self.calc1 =  {
+            elements: ko.observableArray([
+                {
+                    val: ko.observable(11782),
+                    edit: ko.observable(false)
+                },
+                {
+                    val: ko.observable(3678),
+                    edit: ko.observable(false)
+                },
+                {
+                    val: ko.observable(678),
+                    edit: ko.observable(false)
+                },
+                {
+                    val: ko.observable(-5423),
+                    edit: ko.observable(false)
+                }
+            ])
+        };
+
+
+        self.calc2 =  {
+            elements: ko.observableArray([])
+        };
+    };
+
+    $(function(){
+        ko.applyBindings(new vm());
+       // sticky.init();
+    })
 </script>
 
-<script>
-    ko.applyBindings(new vm());
-</script>
+
 
 </body>
 </html>

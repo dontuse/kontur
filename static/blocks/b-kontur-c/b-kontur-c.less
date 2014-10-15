@@ -1,33 +1,43 @@
 .b-kontur-c {
 
-  width: 380px;
+  width: 280px;
   font-size: 13px;
   font-family: Arial;
 
   &__head {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    .clearFix();
+  }
+
+  &__add {
+    float: right;
   }
 
   &__cy {
     font-weight: bold;
     margin-bottom: 10px;
-    margin-left: 34px;
+    text-align: right;
   }
 
   &__el {
-    margin-bottom: 10px;
-    margin-left: 20px;
+    margin-bottom: 2px;
+    margin-left: 35px;
     .clearFix();
   }
 
   &__el-row {
-    float: left;
+    float: right;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-right: -70px;
   }
 
   &__el-row:hover {
     background: #b3e0f4;
+  }
+
+  &__el-row_s_save {
+    margin-right: -106px;
   }
 
 
@@ -36,7 +46,7 @@
     max-width: 400px;
     float: left;
     text-align: right;
-    margin-right: 10px;
+    margin-right: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -49,16 +59,16 @@
     position: relative;
     right: -8px;
     padding: 0 8px;
+    margin-right: 16px;
   }
 
   &__save {
-    margin-right: 20px;
-    margin-left: 21px;
+
   }
 
   &__remove {
     visibility: hidden;
-    margin-right: 10px;
+
   }
 
   &__remove,
@@ -81,5 +91,10 @@
     left: 200px;
     border: 1px solid #333333;
     background: #ffffff;
+  }
+
+  &__total {
+    margin-top: 16px;
+    float: right;
   }
 }

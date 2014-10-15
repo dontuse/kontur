@@ -2,16 +2,9 @@ function KonturComponentVM(data) {
     "use strict";
     var self = this;
 
-    self.data = {
-        elements: []
-    };
+    self.data = data ;
 
-    self.data.elements = ko.observableArray([
-        {
-            val: ko.observable(12313),
-            edit: ko.observable(false)
-        }
-    ]);
+    console.log(self.data);
 
     self.total = ko.computed(function () {
         var summ = 0;
@@ -35,7 +28,7 @@ function KonturComponentVM(data) {
     };
 
 
-    this.saveItem = function (elem ,event) {
+    self.saveItem = function (elem ,event) {
         console.log($(event.target));
         elem.edit(false);
         elem.val(+elem.val());
@@ -54,5 +47,9 @@ function KonturComponentVM(data) {
         //console.log('do do do');
     });
 
-
 }
+
+ko.components.register('konturCalculator', {
+    viewModel: KonturComponentVM,
+    template: { element: 'KonturComponent'}
+});
