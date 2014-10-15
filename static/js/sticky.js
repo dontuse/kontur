@@ -1,4 +1,4 @@
-$(function () {
+function sticky () {
 
     var $elem = $('.b-kontur-c__total');
     var $sticky = $('.b-kontur-c__sticky');
@@ -43,7 +43,9 @@ $(function () {
         return (!(elementOffset.top > minTop && elementOffset.top + elementHeight < maxTop) && (elementOffset.left > minLeft && elementOffset.left + elementWidth < maxLeft))
 
     }
-});
+}
+
+
 
 
 
