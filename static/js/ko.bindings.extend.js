@@ -1,4 +1,4 @@
-(function(ko){
+(function (ko) {
     'use strict';
 
     var ENTER_KEY = 13;
@@ -56,8 +56,8 @@
 
     ko.bindingHandlers.currency = {
         symbol: ko.observable('$'),
-        update: function(element, valueAccessor, allBindingsAccessor){
-            return ko.bindingHandlers.text.update(element,function(){
+        update: function (element, valueAccessor, allBindingsAccessor) {
+            return ko.bindingHandlers.text.update(element, function () {
                 var value = +(ko.utils.unwrapObservable(valueAccessor()) || 0)
 
                 return  value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
@@ -67,20 +67,10 @@
 
 
     ko.bindingHandlers.sticky = {
-        init: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
-        // This will be called when the binding is first applied to an element
-        // Set up any initial state, event handlers, etc. here
-        console.log('init');
-        console.log(element);
-        console.log(viewModel);
-        console.log(bindingContext);
-        new Sticky($(element));
+        init: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
+            new Sticky($(element));
         },
-    update: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
-        // This will be called once when the binding is first applied to an element,
-        // and again whenever any observables/computeds that are accessed change
-        // Update the DOM element based on the supplied values here.
-        console.log('update');
+        update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
         }
     };
 

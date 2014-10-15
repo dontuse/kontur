@@ -30,7 +30,7 @@
 
     Sticky.prototype.handler = function () {
         var offset =  this.$elem.offset();
-        var left =  offset.left + this.$elem.width() - this.$sticky.width() + 'px'  ;
+        var left =  offset.left + this.$elem.outerWidth() - this.$sticky.width() + 'px'  ;
 
         this.checkInViewPort(this.$stWrap) ?
             this.$sticky.addClass(this.stClass) :
