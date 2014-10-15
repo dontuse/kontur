@@ -1,24 +1,12 @@
-<div class="b-kontur-c js-konur-calc">
-    <div class="b-kontur-c__head">
-        <button data-bind='click: addItem' class="b-button" type="button">Добавить cтрочку</button>
+<div class="clearFix">
+    <div style="float: left;">
+        <div data-bind='component: "konturCalculator"'></div>
     </div>
-    <div class="b-kontur-c__cy">Сумма, р.:</div>
-    <div data-bind="foreach:data.elements">
-        <div class="b-kontur-c__el">
-           <div class="b-kontur-c__el-row">
-               <span data-bind="currency:val , click: $root.startEdit , visible: !edit()" class="b-kontur-c__val"></span>
-               <input data-bind="value:val, enterKey:$root.saveItem, visible: edit() " class="b-input b-kontur-c__nu-inp">
-               <button data-bind="click:$root.saveItem , visible: edit()" class="b-button b-kontur-c__save" type="button">
-                   сохранить
-               </button>
-               <a data-bind="click:$root.removeItem" class="b-kontur-c__remove" href="">удалить</a>
-           </div>
-        </div>
-    </div>
-    <div class="b-kontur-c__total">
-        <span class="b-kontur-c__sticky ">Итого: <b data-bind="text:total"></b></span>
+    <div style="float: left;">
+        <div data-bind='component: "konturCalculator"'></div>
     </div>
 </div>
+
 
 
 

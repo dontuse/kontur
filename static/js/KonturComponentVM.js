@@ -35,8 +35,8 @@ function KonturComponentVM(data) {
     };
 
 
-    self.saveItem = function (elem ,event) {
-        //console.log($(event.target));
+    this.saveItem = function (elem ,event) {
+        console.log($(event.target));
         elem.edit(false);
         elem.val(+elem.val());
         if(!$.isNumeric(elem.val()) || isNaN(elem.val()) ) {
