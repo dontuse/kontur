@@ -51,7 +51,7 @@
 
 
 <template id = "KonturComponent">
-    <div class="b-kontur-c js-konur-calc" data-bind="sticky">
+    <div class="b-kontur-c" data-bind="sticky">
         <div class="b-kontur-c__head">
             <button data-bind='click: addItem' class="b-button b-kontur-c__add" type="button">Добавить cтрочку</button>
         </div>
@@ -79,31 +79,13 @@
 
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="static/js/bower_components/knockoutjs/dist/knockout.debug.js"></script>
-
+<script src="static/js/Sticky.js"></script>
 <script src="static/js/ko.bindings.extend.js"></script>
 <script src="static/js/KonturComponentVM.js"></script>
 
-<script src="static/js/sticky.js"></script>
 
-<script>
-    ko.bindingHandlers.sticky = {
-        init: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
-            // This will be called when the binding is first applied to an element
-            // Set up any initial state, event handlers, etc. here
-            console.log('init');
-            console.log(element);
-            console.log(viewModel);
-            console.log(bindingContext);
-            sticky();
-        },
-        update: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
-            // This will be called once when the binding is first applied to an element,
-            // and again whenever any observables/computeds that are accessed change
-            // Update the DOM element based on the supplied values here.
-            console.log('update');
-        }
-    };
-</script>
+
+
 
 <script>
 
