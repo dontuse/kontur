@@ -1,31 +1,49 @@
-function sticky () {
+(function() {
+    "use strict";
 
-    var $elem = $('.b-kontur-c__total');
-    var $sticky = $('.b-kontur-c__sticky');
-    var stClass = 'b-kontur-c__sticky_on';
+    function Sticky($elem) {
+        this.$elem = $elem;
+        this.$sticky = $('.b-kontur-c__sticky', $elem);
+        this.stClass = 'b-kontur-c__sticky_on';
+        this.$stWrap = $('.b-kontur-c__total' , $elem);
 
-    $(document).on('click', '.b-button , .b-kontur-c__remove' , function () {
-        handler();
-    });
-
-    $(window).scroll(function () {
-        handler();
-    });
-
-
-
-
-    function handler() {
-        checkInViewPort($elem) ?
-            $sticky.addClass(stClass) :
-            $sticky.removeClass(stClass);
-
-        $('.b-input:eq(0)').focus();
+        this.init();
     }
 
 
-    function checkInViewPort($elem) {
+    Sticky.prototype.init = function () {
+        this.bindng();
+    };
 
+    Sticky.prototype.bindng = function () {
+
+        var that = this;
+
+        this.$elem.on('click', '.b-button , .b-kontur-c__remove', function () {
+            that.handler();
+        });
+
+        $(window).scroll(function () {
+            that.handler();
+        });
+    };
+
+    Sticky.prototype.handler = function () {
+        var offset =  this.$elem.offset();
+        var left =  offset.left + this.$elem.width() - this.$sticky.width() + 'px'  ;
+
+        this.checkInViewPort(this.$stWrap) ?
+            this.$sticky.addClass(this.stClass) :
+            this.$sticky.removeClass(this.stClass);
+
+
+        this.$sticky.css('left', left);
+
+        $('.b-input:eq(0)', this.$elem).focus();
+    };
+
+
+    Sticky.prototype.checkInViewPort = function ($elem) {
         var viewportWidth = $(window).width(),
             viewportHeight = $(window).height(),
             documentScrollTop = $(document).scrollTop(),
@@ -42,8 +60,13 @@ function sticky () {
 
         return (!(elementOffset.top > minTop && elementOffset.top + elementHeight < maxTop) && (elementOffset.left > minLeft && elementOffset.left + elementWidth < maxLeft))
 
-    }
-}
+    };
+
+    window.Sticky = Sticky ;
+
+})();
+
+
 
 
 
