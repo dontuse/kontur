@@ -4,7 +4,6 @@ function KonturComponentVM(data) {
 
     self.data = data ;
 
-    console.log(self.data);
 
     self.total = ko.computed(function () {
         var summ = 0;

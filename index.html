@@ -17,19 +17,19 @@
         Контур. Тестовое задание.
     </div>
     <div class="b-header__container-3">
-        <b>djqnb</b> <b>|</b> <b><a href="">dsqnb</a></b>
+
     </div>
 </header>
 
 <div class="b-wrap b-content">
     <div class="clearFix">
     <div style="float: left; width: 50%">
-        <h2 class="b-title">1 инстанс</h2>
+        <h2 class="b-title">1 инстанс:</h2>
 
         <div data-bind='component: {name:"konturCalculator" , params: calc1}'></div>
     </div>
     <div style="float: left; width: 50%">
-        <h2 class="b-title">2 инстанс</h2>
+        <h2 class="b-title">2 инстанс:</h2>
 
         <div data-bind='component: {name:"konturCalculator" , params: calc2}'></div>
     </div>
@@ -46,7 +46,7 @@
 </div>
 
 <footer class="b-footer b-wrap">
-    dsadsad
+    © Andrey Bayandin
 </footer>
 
 
@@ -62,14 +62,16 @@
                     <span data-bind="currency:val , click: $parents[0].startEdit , visible: !edit()" class="b-kontur-c__val"></span>
                     <input data-bind="value:val, enterKey:$parents[0].saveItem, visible: edit() " class="b-input b-kontur-c__nu-inp">
                     <button data-bind="click:$parents[0].saveItem , visible: edit()" class="b-button b-kontur-c__save" type="button">
-                        сохранить
+                        Cохранить
                     </button>
                     <a data-bind="click:$parents[0].removeItem , visible: !edit()" class="b-kontur-c__remove" href="">Удалить</a>
                 </div>
             </div>
         </div>
         <div class="b-kontur-c__total">
-            <span class="b-kontur-c__sticky ">Итого: <b data-bind="currency:total"></b></span>
+            <span class="b-kontur-c__sticky ">Итого:
+                <b data-bind="currency:total" class="b-kontur-c__total-val"></b>
+            </span>
         </div>
     </div>
 </template>

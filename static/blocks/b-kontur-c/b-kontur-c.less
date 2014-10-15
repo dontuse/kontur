@@ -11,25 +11,28 @@
 
   &__add {
     float: right;
+    margin-right: -17px;
   }
 
   &__cy {
     font-weight: bold;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-align: right;
   }
 
   &__el {
-    margin-bottom: 2px;
     margin-left: 35px;
     .clearFix();
   }
 
   &__el-row {
     float: right;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-right: -70px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 10px;
+    margin-right: -75px;
+    transition: background 0.4s ;
+    cursor: pointer;
   }
 
   &__el-row:hover {
@@ -37,29 +40,32 @@
   }
 
   &__el-row_s_save {
-    margin-right: -106px;
+    margin-right: -119px;
   }
 
 
   &__val {
     min-width: 70px;
     max-width: 400px;
+    margin-left: 5px;
     float: left;
     text-align: right;
     margin-right: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    height: 24px;
+    line-height: 24px;
   }
 
   &__nu-inp {
     text-align: right;
-    width: 70px;
+    width: 76px;
     float: left;
     position: relative;
-    right: -8px;
     padding: 0 8px;
-    margin-right: 16px;
+    margin-right: 14px;
+    margin-left: 5px;
   }
 
   &__save {
@@ -75,6 +81,11 @@
   &__remove:visited {
     text-decoration: none;
     border-bottom: 1px  dashed;
+    color: #003399;
+  }
+
+  &__remove:hover {
+    color: red;
   }
 
   &__el:hover &__remove {
@@ -94,7 +105,11 @@
   }
 
   &__total {
-    margin-top: 16px;
+    margin-top: 14px;
     float: right;
+  }
+
+  &__total-val {
+    margin-left: 8px;
   }
 }

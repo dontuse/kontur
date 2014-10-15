@@ -385,7 +385,7 @@ body {
   font-size: 15px;
   line-height: 1.4666666666666666;
   font-family: Arial, Helvetica, Sans-serif;
-  color: #414141;
+  color: #000000;
   position: relative;
   min-height: 100%;
   -webkit-font-smoothing: antialiased;
@@ -467,9 +467,11 @@ textarea {
   font-size: 12px;
   font-family: Arial;
   color: #555;
-  height: 22px;
-  line-height: 22px;
+  height: 24px;
+  line-height: 24px;
   border: 1px solid #bbb;
+  border-top: 1px solid #636d76;
+  border-radius: 3px;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 }
 .b-input:focus {
@@ -605,14 +607,14 @@ textarea {
 }
 .b-kontur-c__add {
   float: right;
+  margin-right: -17px;
 }
 .b-kontur-c__cy {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   text-align: right;
 }
 .b-kontur-c__el {
-  margin-bottom: 2px;
   margin-left: 35px;
   *zoom: 1;
 }
@@ -627,34 +629,40 @@ textarea {
 }
 .b-kontur-c__el-row {
   float: right;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  margin-right: -70px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-right: 10px;
+  margin-right: -75px;
+  transition: background 0.4s ;
+  cursor: pointer;
 }
 .b-kontur-c__el-row:hover {
   background: #b3e0f4;
 }
 .b-kontur-c__el-row_s_save {
-  margin-right: -106px;
+  margin-right: -119px;
 }
 .b-kontur-c__val {
   min-width: 70px;
   max-width: 400px;
+  margin-left: 5px;
   float: left;
   text-align: right;
   margin-right: 14px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  height: 24px;
+  line-height: 24px;
 }
 .b-kontur-c__nu-inp {
   text-align: right;
-  width: 70px;
+  width: 76px;
   float: left;
   position: relative;
-  right: -8px;
   padding: 0 8px;
-  margin-right: 16px;
+  margin-right: 14px;
+  margin-left: 5px;
 }
 .b-kontur-c__remove {
   visibility: hidden;
@@ -663,6 +671,10 @@ textarea {
 .b-kontur-c__remove:visited {
   text-decoration: none;
   border-bottom: 1px  dashed;
+  color: #003399;
+}
+.b-kontur-c__remove:hover {
+  color: red;
 }
 .b-kontur-c__el:hover .b-kontur-c__remove {
   visibility: visible;
@@ -675,6 +687,9 @@ textarea {
   background: #ffffff;
 }
 .b-kontur-c__total {
-  margin-top: 16px;
+  margin-top: 14px;
   float: right;
+}
+.b-kontur-c__total-val {
+  margin-left: 8px;
 }

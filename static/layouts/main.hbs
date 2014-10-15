@@ -17,7 +17,7 @@
         Контур. Тестовое задание.
     </div>
     <div class="b-header__container-3">
-        <b>djqnb</b> <b>|</b> <b><a href="">dsqnb</a></b>
+
     </div>
 </header>
 
@@ -26,7 +26,7 @@
 </div>
 
 <footer class="b-footer b-wrap">
-    dsadsad
+    © Andrey Bayandin
 </footer>
 
 
@@ -42,14 +42,16 @@
                     <span data-bind="currency:val , click: $parents[0].startEdit , visible: !edit()" class="b-kontur-c__val"></span>
                     <input data-bind="value:val, enterKey:$parents[0].saveItem, visible: edit() " class="b-input b-kontur-c__nu-inp">
                     <button data-bind="click:$parents[0].saveItem , visible: edit()" class="b-button b-kontur-c__save" type="button">
-                        сохранить
+                        Cохранить
                     </button>
                     <a data-bind="click:$parents[0].removeItem , visible: !edit()" class="b-kontur-c__remove" href="">Удалить</a>
                 </div>
             </div>
         </div>
         <div class="b-kontur-c__total">
-            <span class="b-kontur-c__sticky ">Итого: <b data-bind="currency:total"></b></span>
+            <span class="b-kontur-c__sticky ">Итого:
+                <b data-bind="currency:total" class="b-kontur-c__total-val"></b>
+            </span>
         </div>
     </div>
 </template>
