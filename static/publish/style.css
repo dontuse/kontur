@@ -668,6 +668,10 @@ textarea {
   margin-left: 5px;
   font-size: 13px;
 }
+.b-kontur-c__save {
+  margin-top: 1px;
+  float: left;
+}
 .b-kontur-c__remove {
   visibility: hidden;
 }
