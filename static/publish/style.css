@@ -569,6 +569,16 @@ textarea {
   padding: 30px;
   box-sizing: border-box;
   margin-bottom: 20px;
+  *zoom: 1;
+}
+.b-content:before,
+.b-content:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.b-content:after {
+  clear: both;
 }
 .b-content__container-1 {
   margin-bottom: 40px;
