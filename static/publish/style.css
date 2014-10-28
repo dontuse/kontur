@@ -642,7 +642,7 @@ textarea {
   background: #b3e0f4;
 }
 .b-kontur-c__el-row_s_save {
-  margin-right: -119px;
+  margin-right: -108px;
 }
 .b-kontur-c__val {
   min-width: 70px;
@@ -659,8 +659,8 @@ textarea {
   text-align: right;
   width: 76px;
   position: relative;
-  padding: 0 8px;
-  margin-right: 14px;
+  padding: 0 5px;
+  margin-right: 7px;
   margin-left: 5px;
   font-size: 13px;
 }
