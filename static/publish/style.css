@@ -484,7 +484,7 @@ textarea {
   background: none;
   border: none;
   background-color: #e2e2e2;
-  background-image: linear-gradient(to bottom, #ffffff 0%, #fefefe 11%, #f5f5f5 44%, #e8e8e8 50%, #cecece 100%);
+  background-image: linear-gradient(to bottom, #ffffff 0%, #fefefe 11%, #f5f5f5 42%, #e8e8e8 47%, #cecece 95%, #ffffff 100%);
   border-radius: 3px;
   text-decoration: none;
   display: inline-block;
@@ -666,6 +666,7 @@ textarea {
 }
 .b-kontur-c__save {
   width: 80px;
+  font-size: 12px;
 }
 .b-kontur-c__remove {
   visibility: hidden;
