@@ -497,6 +497,7 @@ textarea {
   text-align: center;
   box-sizing: border-box;
   padding: 0 8px;
+  line-height: normal;
 }
 .b-button:visited {
   color: #000000;
@@ -630,12 +631,12 @@ textarea {
 }
 .b-kontur-c__el-row {
   float: right;
-  padding-top: 3px;
-  padding-bottom: 3px;
   padding-right: 10px;
   margin-right: -75px;
   transition: background 0.4s ;
   cursor: pointer;
+  height: 30px;
+  line-height: 30px;
 }
 .b-kontur-c__el-row:hover {
   background: #b3e0f4;
@@ -653,13 +654,10 @@ textarea {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  height: 24px;
-  line-height: 24px;
 }
 .b-kontur-c__nu-inp {
   text-align: right;
   width: 76px;
-  float: left;
   position: relative;
   padding: 0 8px;
   margin-right: 14px;
@@ -667,8 +665,7 @@ textarea {
   font-size: 13px;
 }
 .b-kontur-c__save {
-  margin-top: 1px;
-  float: left;
+  width: 80px;
 }
 .b-kontur-c__remove {
   visibility: hidden;
