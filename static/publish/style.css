@@ -471,6 +471,7 @@ textarea {
   border-radius: 3px;
   -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
           transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  vertical-align: middle;
 }
 .b-input:focus {
   border-color: orange;
@@ -497,6 +498,7 @@ textarea {
   box-sizing: border-box;
   padding: 0 8px;
   line-height: normal;
+  vertical-align: middle;
 }
 .b-button:visited {
   color: #000000;
